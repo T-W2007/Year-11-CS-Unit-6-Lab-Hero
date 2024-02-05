@@ -65,21 +65,18 @@ public class Hero {
     public String nFightsToTheDeath(Hero opponent, int n) {
         String s = "";
         int[] array = nFightsToTheDeathHelper(opponent, n);
-        if (array[0]>array[1]) {
+        if (array[0] > array[1]) {
             s = "Andrew Tate wins!";
-        }
-        else if (array[1]>array[0]){
+        } else if (array[1] > array[0]) {
             s = "Taylor Swift wins!";
-        }
-        else {
+        } else {
             s = "OMG! It was actually a draw!";
         }
         return "Andrew Tate: " + array[0] + " wins" + "\n" + "Taylor Swift: " + array[1] + " wins" + "\n" + s;
     }
 
     public void dramaticFightToTheDeath(Hero opponent) throws InterruptedException {
-        System.out.println("Andrew Tate: " + hitpoints +"\t" + "Taylor Swift: " + opponent.hitpoints);
+        System.out.println("Andrew Tate: " + hitpoints + "\t" + "Taylor Swift: " + opponent.hitpoints);
         Thread.sleep(1000);
     }
-
 }
