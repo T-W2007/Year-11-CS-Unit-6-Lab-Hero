@@ -33,8 +33,9 @@ public class Hero {
         hitpoints = 100;
     }
 
+
     private void fightUntilTheDeathHelper(Hero opponent) {
-        while (hitpoints>0 && opponent.hitpoints>0) {
+        while (this.hitpoints > 0 && opponent.hitpoints > 0) {
             attack(opponent);
         }
     }
@@ -43,19 +44,18 @@ public class Hero {
         senzuBean();
         opponent.senzuBean();
         fightUntilTheDeathHelper(opponent);
-        return name + ": " + hitpoints + "\t" + opponent.name + ": " + opponent.hitpoints;
+        return this.name + ": " + this.hitpoints + "\t" + opponent.name + ": " + opponent.hitpoints;
     }
 
     private int[] nFightsToTheDeathHelper(Hero opponent, int n) {
         int wins = 0;
         int losses = 0;
-        while (n>0) {
+        while (n > 0) {
             senzuBean();
             fightUntilTheDeathHelper(opponent);
-            if (hitpoints==0) {
+            if (this.hitpoints == 0) {
                 losses++;
-            }
-            else {
+            } else {
                 wins++;
             }
             n--;
